@@ -18,8 +18,6 @@
     
     CanvasView *newCanvas = [[CanvasView alloc] initWithFrame:CGRectMake(0.0, 64.0, self.view.frame.size.width, self.view.frame.size.height)];
     self.canvas = newCanvas;
-    [newCanvas release];
-    
     
     [self.view addSubview:canvas];
 }
@@ -50,13 +48,6 @@
     self.button = nil;
     self.segControl = nil;
 }
-
-
-- (void)dealloc {
-    [super dealloc];
-    [canvas release];
-}
-
 
 -(IBAction)setTool: (UISegmentedControl*)sender{
     

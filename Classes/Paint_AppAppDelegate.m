@@ -23,7 +23,6 @@
     UIImageView *background = [[UIImageView alloc] initWithImage:bg];
    
     [window addSubview:background];
-    [background release];
     
     // set view controller
     
@@ -34,13 +33,6 @@
     [window makeKeyAndVisible];
 	
 	return YES;
-}
-
-
-- (void)dealloc {
-
-    [window release];
-    [super dealloc];
 }
 
 

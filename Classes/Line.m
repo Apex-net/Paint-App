@@ -35,10 +35,4 @@
     return self;
 }
 
--(void)dealloc{
-    CGPathRelease([self linePath]);
-    [self.lineColor release];
-    [super dealloc];
-}
-
 @end

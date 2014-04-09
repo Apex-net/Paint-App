@@ -86,24 +86,8 @@
     [self.lines addObject:self.currentLine];
     Line *nextLine = [[Line alloc] initWithOptions:self.currentLine.lineWidth color:self.currentLine.lineColor opacity:self.currentLine.opacity];
     self.currentLine = nextLine;
-    [nextLine release];
     NSLog(@"touch #: %u", [self.lines count]);
 }
 
-
-
-
-- (void)dealloc
-{    
-    // release all paths accumulated in self.lines
-    for (Line *temp in self.lines) {
-        CGPathRelease([temp linePath]);
-    }
-    [self.lines release];
-    [self.currentLine release];
-    [super dealloc];
-
-
-}
 
 @end
