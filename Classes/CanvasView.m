@@ -86,7 +86,7 @@
     [self.lines addObject:self.currentLine];
     Line *nextLine = [[Line alloc] initWithOptions:self.currentLine.lineWidth color:self.currentLine.lineColor opacity:self.currentLine.opacity];
     self.currentLine = nextLine;
-    NSLog(@"touch #: %u", [self.lines count]);
+    NSLog(@"touch #: %lu", (unsigned long)[self.lines count]);
 }
 
 

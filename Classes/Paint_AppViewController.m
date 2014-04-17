@@ -52,9 +52,7 @@
 -(IBAction)setTool: (UISegmentedControl*)sender{
     
     NSInteger selectedSegment = sender.selectedSegmentIndex;
-    NSLog(@"INDEX: %i", selectedSegment);
 
-    
     if ((int)selectedSegment == 0) {
         self.canvas.currentLine.lineColor = [UIColor blackColor];
         self.canvas.currentLine.lineWidth = 2.0;
@@ -69,7 +67,7 @@
 -(IBAction)popLine:(UIBarButtonItem *)sender{
     if ([self.canvas.lines count] > 0) {
         
-        NSLog(@"last line: %i", [self.canvas.lines count]);
+        NSLog(@"last line: %lu", (unsigned long)[self.canvas.lines count]);
 
         [self.canvas.lines removeLastObject];
         [self.canvas setNeedsDisplay];
