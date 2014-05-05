@@ -84,6 +84,7 @@
     
     [self setNeedsDisplay];
     [self.lines addObject:self.currentLine];
+    [self.delegate canvasViewLineAdded];
     Line *nextLine = [[Line alloc] initWithOptions:self.currentLine.lineWidth color:self.currentLine.lineColor opacity:self.currentLine.opacity];
     self.currentLine = nextLine;
     NSLog(@"touch #: %lu", (unsigned long)[self.lines count]);

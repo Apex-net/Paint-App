@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Line.h"
 
+@protocol CanvasViewDelegate <NSObject>
 
-@interface CanvasView : UIView {
+-(void)canvasViewLineAdded;
 
-    
-}
+@end
+
+@interface CanvasView : UIView
+
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) Line *currentLine;
-
+@property (nonatomic, assign) id <CanvasViewDelegate> delegate;
 
 @end
